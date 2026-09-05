@@ -67,3 +67,5 @@ See `docs/` and the full specification in `docs/FaceScan_Studio_Full_Blueprint.t
 - Results depend on photo quality and how well the 2K app locks onto the screen.
 - The OpenCV backend is a 2.5D approximation (perspective warp + blink + lighting), not a full 3D morphable model. For higher geometric fidelity, add a clean head mesh and use the Blender backend.
 - Use only photos you have rights to. This is a local lab / personal pipeline tool.
+
+- Independent project notice: FaceScan Studio is an unofficial, community-built, noncommercial software project. It is not affiliated with, endorsed by, sponsored by, or approved by 2K, Visual Concepts, Take-Two Interactive, or any NBA 2K product team. “NBA 2K,” “2K,” “2K HQ,” and related names are referenced solely to describe compatibility with the user’s existing software and are trademarks of their respective owners.
