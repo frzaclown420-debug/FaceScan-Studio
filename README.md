@@ -4,6 +4,10 @@ Local tool for turning a **single frontal photo** into a **2K HQ face-scan video
 
 Template head + photo projection + masks + look-around + blinks + scan-safe lighting → MP4 you play fullscreen and scan with the NBA 2K HQ app.
 
+## Preview
+
+[Watch the FaceScan Studio preview video on Jumpshare](https://jumpshare.com/share/OP6CJiZ0vSnlsxSuiTuA)
+
 ## What you get
 
 - Gradio web UI on `http://127.0.0.1:7860`
