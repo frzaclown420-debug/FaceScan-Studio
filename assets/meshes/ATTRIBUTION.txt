@@ -1,0 +1,1 @@
+DECA / FLAME generic head template (yfeng95/DECA). Used as the scan-ready human head.

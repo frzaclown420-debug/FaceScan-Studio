@@ -1,0 +1,10 @@
+{
+  "masks": [
+    {"id": "stubble", "name": "Light Stubble", "category": "beards", "path": "beards/stubble.png", "type": "texture", "tags": ["beard", "short"]},
+    {"id": "full_beard", "name": "Full Beard", "category": "beards", "path": "beards/full_beard.png", "type": "texture", "tags": ["beard"]},
+    {"id": "goatee", "name": "Goatee", "category": "beards", "path": "beards/goatee.png", "type": "texture", "tags": ["beard"]},
+    {"id": "brows_thick", "name": "Thick Brows", "category": "eyebrows", "path": "eyebrows/thick.png", "type": "texture", "tags": ["brows"]},
+    {"id": "scar_brow", "name": "Brow Scar", "category": "scars", "path": "scars/brow.png", "type": "texture", "tags": ["scar"]},
+    {"id": "freckles", "name": "Freckles", "category": "makeup", "path": "makeup/freckles.png", "type": "texture", "tags": ["skin"]}
+  ]
+}

@@ -1,0 +1,11 @@
+gradio>=4.44.0
+pydantic>=2.6
+numpy>=1.26
+Pillow>=10.0
+opencv-python-headless>=4.9
+loguru>=0.7
+imageio>=2.34
+imageio-ffmpeg>=0.4.9
+python-dotenv>=1.0
+# mediapipe optional — skip on Python 3.14 (no mp.solutions)
+# mediapipe>=0.10.14

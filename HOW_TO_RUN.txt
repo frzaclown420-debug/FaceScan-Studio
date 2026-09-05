@@ -1,0 +1,20 @@
+ONE SCREEN. THAT IS THE WHOLE APP.
+
+On Kali:
+
+  cd ~/Desktop/facescan-studio
+  source .venv/bin/activate
+  export PYTHONPATH=.
+  python3 app.py
+
+Firefox: http://127.0.0.1:7860
+Leave the terminal open.
+
+1. Pick a preset 3D head (male / female / athletic / neutral)
+2. Drop a frontal photo
+3. Click Map photo onto head
+4. Nudge sliders only if the face sits wrong
+5. Click Make scan video
+6. Play the MP4 fullscreen and scan with 2K HQ
+
+No extra tabs. Scan settings (turn, blinks, light) are already baked in.

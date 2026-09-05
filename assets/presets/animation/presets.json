@@ -1,0 +1,32 @@
+{
+  "2k_official": {
+    "yaw_range_deg": 40,
+    "pitch_range_deg": 8,
+    "duration_sec": 16,
+    "fps": 30,
+    "easing": "ease_in_out",
+    "hold_at_extreme_sec": 0.35,
+    "blink_per_minute": 14,
+    "blink_duration_ms": 180
+  },
+  "slow_dramatic": {
+    "yaw_range_deg": 38,
+    "pitch_range_deg": 6,
+    "duration_sec": 22,
+    "fps": 30,
+    "easing": "smoothstep",
+    "hold_at_extreme_sec": 0.55,
+    "blink_per_minute": 10,
+    "blink_duration_ms": 200
+  },
+  "quick_scan": {
+    "yaw_range_deg": 36,
+    "pitch_range_deg": 6,
+    "duration_sec": 10,
+    "fps": 30,
+    "easing": "ease_in_out",
+    "hold_at_extreme_sec": 0.2,
+    "blink_per_minute": 12,
+    "blink_duration_ms": 160
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "templates": [
+    {
+      "id": "male_average",
+      "name": "Male Average (Neutral)",
+      "gender": "male",
+      "ethnicity": "multi",
+      "age_range": "20-35",
+      "path": "male_average.json",
+      "thumbnail": null,
+      "polycount": 0,
+      "has_blink_keys": true,
+      "notes": "Default average male template used by the OpenCV 2.5D pipeline."
+    },
+    {
+      "id": "female_average",
+      "name": "Female Average (Neutral)",
+      "gender": "female",
+      "ethnicity": "multi",
+      "age_range": "20-35",
+      "path": "female_average.json",
+      "thumbnail": null,
+      "polycount": 0,
+      "has_blink_keys": true,
+      "notes": "Default average female template used by the OpenCV 2.5D pipeline."
+    },
+    {
+      "id": "male_athletic",
+      "name": "Male Athletic",
+      "gender": "male",
+      "ethnicity": "multi",
+      "age_range": "20-32",
+      "path": "male_athletic.json",
+      "thumbnail": null,
+      "polycount": 0,
+      "has_blink_keys": true,
+      "notes": "Slightly longer face, stronger jaw bias in 2.5D warp."
+    },
+    {
+      "id": "androgynous_average",
+      "name": "Androgynous Average",
+      "gender": "androgynous",
+      "ethnicity": "multi",
+      "age_range": "18-30",
+      "path": "androgynous_average.json",
+      "thumbnail": null,
+      "polycount": 0,
+      "has_blink_keys": true,
+      "notes": "Neutral proportions for custom identities."
+    }
+  ]
+}

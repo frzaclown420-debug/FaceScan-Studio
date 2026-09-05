@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>FaceScan — fullscreen head</title>
+<style>
+  html,body{margin:0;height:100%;background:#0d1016;font-family:Inter,system-ui,sans-serif;color:#e8edf5;overflow:hidden}
+  #c{position:fixed;inset:0}
+  #bar{position:fixed;left:12px;bottom:12px;display:flex;gap:8px;flex-wrap:wrap;z-index:5}
+  button,select{padding:8px 12px;border:0;border-radius:8px;background:#3a3f48;color:#fff;cursor:pointer;font-size:14px}
+  button:hover{background:#525866}
+  #hint{position:fixed;top:10px;left:12px;opacity:.7;font-size:13px}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hint">Drag to turn the head. Scroll to zoom. Fullscreen, then scan or record.</div>
+<div id="bar">
+  <button id="fs">Fullscreen</button>
+  <select id="bg">
+    <option value="#6e7074">Studio gray</option>
+    <option value="#c8c8c8">Light gray</option>
+    <option value="#ffffff">White</option>
+    <option value="#00ff00">Green screen</option>
+    <option value="#111111">Black</option>
+    <option value="#c4b49a">Warm beige</option>
+  </select>
+  <button id="reset">Reset view</button>
+</div>
+<script type="importmap">
+{"imports":{
+  "three":"https://unpkg.com/three@0.170.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.170.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#6e7074');
+const camera = new THREE.PerspectiveCamera(32, 1, 0.05, 50);
+camera.position.set(0, 0.05, 2.6);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.target.set(0, 0, 0);
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+const key = new THREE.DirectionalLight(0xfff4e8, 1.15);
+key.position.set(-1.2, 1.4, 2.2);
+scene.add(key);
+const fill = new THREE.DirectionalLight(0xcfe4ff, 0.45);
+fill.position.set(1.6, 0.2, 1.2);
+scene.add(fill);
+
+const loader = new GLTFLoader();
+const glb = new URLSearchParams(location.search).get('glb') || 'head.glb';
+loader.load(glb, (g) => {
+  const root = g.scene;
+  const box = new THREE.Box3().setFromObject(root);
+  const size = box.getSize(new THREE.Vector3()).length() || 1;
+  const mid = box.getCenter(new THREE.Vector3());
+  root.position.sub(mid);
+  root.scale.setScalar(1.6 / size);
+  scene.add(root);
+}, undefined, (e) => {
+  document.getElementById('hint').textContent = 'No head.glb yet — hit Update 3D head in FaceScan first.';
+});
+
+function resize(){
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / Math.max(h, 1);
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+resize();
+
+function tick(){
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
+tick();
+
+document.getElementById('fs').onclick = () => {
+  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
+  else document.exitFullscreen();
+};
+document.getElementById('bg').onchange = (e) => {
+  scene.background = new THREE.Color(e.target.value);
+};
+document.getElementById('reset').onclick = () => {
+  camera.position.set(0, 0.05, 2.6);
+  controls.target.set(0, 0, 0);
+  controls.update();
+};
+</script>
+</body>
+</html>

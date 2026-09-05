@@ -1,0 +1,17 @@
+FIXED BUILD
+- MediaPipe on Python 3.14 no longer crashes (no mp.solutions → Haar fallback)
+- Gradio 6 photo upload path handling
+- Theme warning moved to launch()
+- Generate tells you to upload a photo instead of exploding
+
+RUN
+  cd facescan-studio
+  source .venv/bin/activate   # or ./install.sh first
+  export PYTHONPATH=.
+  python3 app.py
+
+Then open Firefox: http://127.0.0.1:7860
+Leave the terminal open. That is the server.
+
+If mediapipe is already installed and weird:
+  pip uninstall -y mediapipe
