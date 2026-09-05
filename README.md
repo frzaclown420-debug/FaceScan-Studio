@@ -6,7 +6,7 @@ Template head + photo projection + masks + look-around + blinks + scan-safe ligh
 
 ## Preview
 
-[Watch the FaceScan Studio preview video on Jumpshare](https://jumpshare.com/share/OP6CJiZ0vSnlsxSuiTuA)
+[Watch the FaceScan Studio preview video on Jumpshare](https://www.image2url.com/r2/default/gifs/1788594294910-71ea09f8-d9bc-4739-8d6e-4a48b303cd62.gif)
 
 ## What you get
 
